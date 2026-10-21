@@ -186,9 +186,18 @@ export function AnimatedNavFramer() {
                 key={item.name}
                 href={item.href}
                 variants={itemVariants}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
+                  const targetId = item.href.replace(/^#/, "");
+                  const targetElement = document.getElementById(targetId);
+                  if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth" });
+                  }
                   if (scrollY.get() > 30) {
                     setExpanded(false);
+                  }
+                  if (window.location.hash) {
+                    history.replaceState(null, "", window.location.pathname);
                   }
                 }}
                 className="text-xs lg:text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-full hover:bg-muted/70"

@@ -1,6 +1,7 @@
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from '@vercel/analytics/next';
+import { CleanUrl } from '@/components/clean-url';
 
 export const metadata = {
   title: 'Faycal´s portfolio',
@@ -29,6 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <CleanUrl />
           {children}
           <Analytics />
         </ThemeProvider>

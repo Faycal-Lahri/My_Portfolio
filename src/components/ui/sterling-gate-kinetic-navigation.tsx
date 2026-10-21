@@ -102,7 +102,20 @@ export function FullScreenMobileNavigation({
               >
                 <a
                   href={item.href}
-                  onClick={onClose}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onClose();
+                    const targetId = item.href.replace(/^#/, "");
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                      setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: "smooth" });
+                      }, 120);
+                    }
+                    if (window.location.hash) {
+                      history.replaceState(null, "", window.location.pathname);
+                    }
+                  }}
                   className="group flex items-baseline justify-between py-2 sm:py-2.5 border-b border-border/20 hover:border-border/80 transition-all"
                 >
                   <div className="flex items-baseline gap-3 sm:gap-5">

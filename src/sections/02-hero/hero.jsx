@@ -18,6 +18,9 @@ export function Hero() {
     if (profileSection) {
       profileSection.scrollIntoView({ behavior: 'smooth' });
     }
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
+    }
   };
 
   return (
