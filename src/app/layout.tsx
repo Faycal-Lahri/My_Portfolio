@@ -5,7 +5,7 @@ import { CleanUrl } from '@/components/clean-url';
 
 export const metadata = {
   title: 'Faycal´s portfolio',
-  description: 'Fayçal Lahri — Software Engineer & Full-Stack Developer. Portfolio personnel monochrome conçu selon le système de design Apple.',
+  description: 'Fayçal Lahri - Software Engineer & Full-Stack Developer. Portfolio personnel monochrome conçu selon le système de design Apple.',
 };
 
 export const viewport = {

@@ -134,24 +134,24 @@ export function AnimatedNavFramer() {
     <>
       {/* 1. Mobile Top Floating Bar: Dynamic Island centered pill with clear "Menu" label */}
       <div className="md:hidden fixed top-4 left-1/2 -translate-x-1/2 z-50 w-auto">
-        <div className="flex items-center gap-2 px-4 py-2 bg-background/95 text-foreground border border-border rounded-full shadow-lg backdrop-blur-md">
+        <div className="flex items-center gap-2 px-4 py-2 bg-black/95 dark:bg-white/95 text-white dark:text-neutral-900 border border-neutral-800 dark:border-neutral-200 rounded-full shadow-lg backdrop-blur-md">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground hover:opacity-80 active:scale-95 transition-all cursor-pointer"
+            className="flex items-center gap-2 text-sm font-semibold tracking-tight text-white dark:text-neutral-900 hover:opacity-80 active:scale-95 transition-all cursor-pointer"
             aria-label="Ouvrir le menu"
           >
             <Menu className="w-4 h-4" />
             <span>Menu</span>
           </button>
 
-          <span className="w-[1px] h-4 bg-border" aria-hidden="true" />
+          <span className="w-[1px] h-4 bg-white/20 dark:bg-black/20" aria-hidden="true" />
 
-          <ThemeToggle className="border-0 bg-transparent hover:bg-transparent shadow-none" />
+          <ThemeToggle className="border-0 bg-transparent hover:bg-transparent shadow-none text-white dark:text-neutral-900" />
         </div>
       </div>
 
-      {/* 2. Desktop & iPad Floating Pill Navigation with Touch & Click Support */}
+      {/* 2. Desktop & iPad Floating Pill Navigation with Inverted Contrast */}
       <div 
         ref={navContainerRef}
         className="hidden md:block fixed top-5 left-1/2 -translate-x-1/2 z-50 max-w-[95vw]"
@@ -170,8 +170,8 @@ export function AnimatedNavFramer() {
             }
           }}
           className={cn(
-            "relative flex items-center overflow-hidden rounded-full border border-border bg-background/90 text-foreground shadow-lg backdrop-blur-md h-12 select-none px-2 transition-colors cursor-pointer",
-            !isExpanded && "hover:border-foreground/40"
+            "relative flex items-center overflow-hidden rounded-full border border-neutral-800 dark:border-neutral-200 bg-black/95 dark:bg-white/95 text-white dark:text-neutral-900 shadow-xl backdrop-blur-md h-12 select-none px-2 transition-colors cursor-pointer",
+            !isExpanded && "hover:border-neutral-600 dark:hover:border-neutral-400"
           )}
         >
           {/* Expanded Links with original stagger animation */}
@@ -200,7 +200,7 @@ export function AnimatedNavFramer() {
                     history.replaceState(null, "", window.location.pathname);
                   }
                 }}
-                className="text-xs lg:text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-full hover:bg-muted/70"
+                className="text-xs lg:text-[13px] font-medium text-neutral-400 hover:text-white dark:text-neutral-600 dark:hover:text-black transition-colors px-3 py-1.5 rounded-full hover:bg-white/10 dark:hover:bg-black/10"
               >
                 {item.name}
               </motion.a>
@@ -208,7 +208,7 @@ export function AnimatedNavFramer() {
 
             {/* Theme Toggle Button inside navbar */}
             <motion.div variants={itemVariants} className="flex items-center pr-1 pl-1">
-              <ThemeToggle />
+              <ThemeToggle className="text-white hover:bg-white/15 dark:text-neutral-900 dark:hover:bg-black/10 border-0 bg-transparent shadow-none" />
             </motion.div>
           </motion.div>
 
@@ -221,7 +221,7 @@ export function AnimatedNavFramer() {
               setExpanded(true);
             }}
             className={cn(
-              "absolute inset-0 w-full h-full flex items-center justify-center gap-1.5 text-xs font-semibold text-foreground whitespace-nowrap cursor-pointer",
+              "absolute inset-0 w-full h-full flex items-center justify-center gap-1.5 text-xs font-semibold text-white dark:text-neutral-900 whitespace-nowrap cursor-pointer",
               isExpanded && "pointer-events-none"
             )}
             aria-label="Ouvrir le menu"

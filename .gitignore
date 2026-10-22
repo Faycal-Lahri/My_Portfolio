@@ -24,4 +24,6 @@ yarn-debug.log*
 .env.*.local
 .env.*
 .vercel
+*.tsbuildinfo
+scratch*
 
