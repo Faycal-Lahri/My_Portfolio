@@ -469,92 +469,21 @@ export function ProjetsAcademiques() {
             >
               {/* =========================================================
                   OPTION 1: VIDEO PROJECT -> YOUTUBE STYLE
-                  (Video in the center, details below)
+                  (Video player centered, no photo switcher, details below)
                   ========================================================= */}
               {hasVideo ? (
                 <div className="w-full max-w-4xl mx-auto flex flex-col gap-5 sm:gap-6 py-2">
-                  {/* YouTube-like Media Player (Video or Photo) */}
+                  {/* YouTube-like Pure Video Player */}
                   <div className="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden border border-neutral-200 dark:border-white/15 bg-black shadow-2xl flex items-center justify-center">
-                    {/* Video Player */}
-                    {selectedProject.video && (
-                      <div className={`absolute inset-0 w-full h-full transition-opacity duration-300 ease-out ${
-                        showVideo ? 'opacity-100 z-20 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
-                      }`}>
-                        <video
-                          src={selectedProject.video}
-                          controls
-                          autoPlay
-                          playsInline
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    )}
-
-                    {/* Stacked Photos for Instant Switching without Remounting */}
-                    {selectedProject.images && selectedProject.images.map((imgSrc, imgIdx) => {
-                      const isCurrent = !showVideo && imgIdx === activeImageIndex;
-                      return (
-                        <img
-                          key={imgSrc}
-                          src={imgSrc}
-                          alt={`${selectedProject.title} - vue ${imgIdx + 1}`}
-                          className={`absolute inset-0 w-full h-full object-contain select-none transition-opacity duration-300 ease-out will-change-[opacity] ${
-                            isCurrent ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                          }`}
-                          draggable={false}
-                          loading="eager"
-                        />
-                      );
-                    })}
+                    <video
+                      key={selectedProject.video}
+                      src={selectedProject.video}
+                      controls
+                      autoPlay
+                      playsInline
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-
-                  {/* Media Switcher: Video + Screenshots Thumbnails */}
-                  {selectedProject.images && selectedProject.images.length > 0 && (
-                    <div className="w-full flex items-center justify-start sm:justify-center gap-2 sm:gap-3 py-1 px-1 overflow-x-auto no-scrollbar touch-pan-x">
-                      {/* Video Button */}
-                      <button
-                        type="button"
-                        onClick={() => setShowVideo(true)}
-                        className={`relative h-11 sm:h-13 md:h-14 px-3 sm:px-4 rounded-lg sm:rounded-xl flex items-center gap-2 font-medium text-xs sm:text-sm flex-shrink-0 cursor-pointer transition-all duration-200 active:scale-95 ${
-                          showVideo
-                            ? 'ring-2 ring-neutral-900 dark:ring-white scale-105 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 shadow-md font-semibold'
-                            : 'bg-neutral-200/80 dark:bg-white/10 text-neutral-800 dark:text-white/80 opacity-60 hover:opacity-100 border border-neutral-300 dark:border-neutral-700'
-                        }`}
-                        aria-label="Afficher la vidéo démo"
-                      >
-                        <span className="text-sm">▶</span>
-                        <span>Vidéo Démo</span>
-                      </button>
-
-                      {/* Photo Thumbnails */}
-                      {selectedProject.images.map((img, thumbIdx) => {
-                        const isSelected = !showVideo && thumbIdx === activeImageIndex;
-                        return (
-                          <button
-                            key={thumbIdx}
-                            type="button"
-                            onClick={() => {
-                              setShowVideo(false);
-                              setActiveImageIndex(thumbIdx);
-                            }}
-                            className={`relative w-16 h-11 sm:w-20 sm:h-13 md:w-24 md:h-14 rounded-lg sm:rounded-xl overflow-hidden flex-shrink-0 cursor-pointer transition-all duration-200 active:scale-95 ${
-                              isSelected
-                                ? 'ring-2 ring-neutral-900 dark:ring-white scale-105 opacity-100 shadow-md'
-                                : 'opacity-50 hover:opacity-85 border border-neutral-300 dark:border-neutral-700'
-                            }`}
-                            aria-label={`Afficher la photo ${thumbIdx + 1}`}
-                          >
-                            <img
-                              src={img}
-                              alt={`Miniature ${thumbIdx + 1}`}
-                              className="w-full h-full object-cover select-none pointer-events-none"
-                              draggable={false}
-                            />
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
 
                   {/* YouTube-like Info Below Video */}
                   <div className="px-1 text-left pb-8">

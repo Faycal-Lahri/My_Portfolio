@@ -71,13 +71,7 @@ export const projetsData = {
       domain: "EdTech · Dématérialisation · Automatisation des processus",
       coverImage: "/images/projets/Front/internship-platform.png",
       video: "/images/projets/internship-platform/video.mp4",
-      images: [
-        "/images/projets/internship-platform/photo-1.jpg",
-        "/images/projets/internship-platform/photo-2.jpg",
-        "/images/projets/internship-platform/photo-3.jpg",
-        "/images/projets/internship-platform/photo-4.jpg",
-        "/images/projets/internship-platform/photo-5.jpg",
-      ],
+      images: [],
       problem: "La gestion traditionnelle des stages universitaires (papier, signatures physiques, emails dispersés) engendre des retards administratifs, un manque de traçabilité, une surcharge pour les équipes et un suivi défaillant des étudiants.",
       solution: "Développement d’une plateforme web centralisée couvrant 100% du cycle de vie du stage (de la convention initiale à la soutenance), couplée à un moteur d'orchestration n8n pour automatiser les rappels, attestations et générations documentaires.",
       features: [
@@ -99,13 +93,7 @@ export const projetsData = {
       domain: "E-commerce · Gestion des stocks · Java EE Enterprise",
       coverImage: "/images/projets/Front/epicerie-supermarket.png",
       video: "/images/projets/epicerie-supermarket/video.mp4",
-      images: [
-        "/images/projets/epicerie-supermarket/photo-1.jpg",
-        "/images/projets/epicerie-supermarket/photo-2.jpg",
-        "/images/projets/epicerie-supermarket/photo-3.jpg",
-        "/images/projets/epicerie-supermarket/photo-4.jpg",
-        "/images/projets/epicerie-supermarket/photo-5.jpg",
-      ],
+      images: [],
       problem: "La gestion manuelle d'un commerce alimentaire (inventaire, commandes, réapprovisionnement) crée des incohérences de stocks, des erreurs de caisse et un manque de visibilité analytique sur les ventes quotidiennes.",
       solution: "Développement d’une application e-commerce distribuée full-stack avec une architecture SPA moderne communiquant via une API REST sécurisée avec un backend transactionnel Java EE.",
       features: [
@@ -126,13 +114,7 @@ export const projetsData = {
       domain: "Gestion documentaire · Full Stack · Intégration d’API",
       coverImage: "/images/projets/Front/library-management.png",
       video: "/images/projets/library-management/video.mp4",
-      images: [
-        "/images/projets/library-management/photo-1.jpg",
-        "/images/projets/library-management/photo-2.jpg",
-        "/images/projets/library-management/photo-3.jpg",
-        "/images/projets/library-management/photo-4.jpg",
-        "/images/projets/library-management/photo-5.jpg",
-      ],
+      images: [],
       problem: "La saisie manuelle fastidieuse des références d'ouvrages, le suivi imprécis des dates limites d'emprunt et l'absence de traçabilité documentaire génèrent des pertes de livres et une lourde charge pour le personnel de bibliothèque.",
       solution: "Création d'une plateforme de gestion documentaire automatisée connectée à l'API Google Books pour l'enrichissement instantané par ISBN, intégrant l'authentification Google OAuth2 et la génération automatique de justificatifs PDF.",
       features: [
@@ -153,13 +135,7 @@ export const projetsData = {
       domain: "Tourisme numérique · IA générative · Automatisation",
       coverImage: "/images/projets/Front/discover-morocco.png",
       video: "/images/projets/discover-morocco/video.mp4",
-      images: [
-        "/images/projets/discover-morocco/photo-1.jpg",
-        "/images/projets/discover-morocco/photo-2.jpg",
-        "/images/projets/discover-morocco/photo-3.jpg",
-        "/images/projets/discover-morocco/photo-4.jpg",
-        "/images/projets/discover-morocco/photo-5.jpg",
-      ],
+      images: [],
       problem: "Les touristes peinent à trouver des informations fiables et centralisées pour planifier leur séjour au Maroc, tandis que les organismes de promotion touristique manquent de temps pour répondre individuellement aux requêtes répétitives.",
       solution: "Développement d’un portail immersif valorisant le patrimoine et la vision 2030, couplé à un agent conversationnel propulsé par Gemini et orchestré par n8n pour répondre instantanément 24/7 et automatiser les relances par email.",
       features: [
@@ -204,9 +180,7 @@ export const projetsData = {
       domain: "E-commerce · Développement Web · Gestion des accès",
       coverImage: "/images/projets/Front/magnolia-cosmetics.png",
       video: "/images/projets/magnolia-cosmetics/video.mp4",
-      images: [
-        "/images/projets/Front/magnolia-cosmetics.png",
-      ],
+      images: [],
       problem: "Une boutique de cosmétiques doit garantir une expérience d'achat fluide pour les clients tout en offrant une interface de gestion rigoureuse et cloisonnée pour les administrateurs et la direction.",
       solution: "Conception et réalisation d'une boutique e-commerce complète avec modélisation préalable en UML (diagrammes de cas d'utilisation, séquence et classes) et séparation stricte des privilèges utilisateurs.",
       features: [
