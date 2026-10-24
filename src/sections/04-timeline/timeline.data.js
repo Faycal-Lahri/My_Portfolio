@@ -60,7 +60,7 @@ export const timelineData = {
       position: "bottom",
     },
     {
-      period: "Sept. 2026 – Présent",
+      period: "Sept. – Oct. 2026",
       heading: "Agent d’Exploitation",
       institution: "Royal Air Maroc",
       detail: "Suivi opérationnel des vols et régulation de flotte.",
