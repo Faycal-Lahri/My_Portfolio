@@ -481,6 +481,9 @@ export function ProjetsAcademiques() {
                       controls
                       autoPlay
                       playsInline
+                      controlsList="nodownload noplaybackrate"
+                      disablePictureInPicture
+                      onContextMenu={(e) => e.preventDefault()}
                       className="w-full h-full object-contain"
                     />
                   </div>

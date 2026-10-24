@@ -83,3 +83,30 @@ body::-webkit-scrollbar {
 .dark .apple-product-shadow {
   box-shadow: rgba(255, 255, 255, 0.08) 0px 0px 30px 1px;
 }
+
+/* Protection anti-copie & anti-glisser-déposer */
+*, *::before, *::after {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+img, video {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  pointer-events: auto;
+}
+
+/* Protection anti-impression & anti-export PDF */
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
