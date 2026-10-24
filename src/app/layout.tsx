@@ -7,6 +7,14 @@ import { ContentProtection } from '@/components/content-protection';
 export const metadata = {
   title: 'Faycal´s portfolio',
   description: 'Fayçal Lahri - Software Engineer & Full-Stack Developer. Portfolio personnel monochrome conçu selon le système de design Apple.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon.svg',
+  },
 };
 
 export const viewport = {
